@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replicant Registry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Replicant Registry</h1>
+        <nav>
+            <button id="viewReplicants">View Replicants</button>
+            <button id="addReplicant">Add Replicant</button>
+        </nav>
+    </header>
+    <main>
+        <section id="replicantList" style="display: none;">
+            <h2>All Replicants</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>Inception Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="replicantTableBody">
+                    <!-- Rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="addReplicantForm" style="display: none;">
+            <h2>Add New Replicant</h2>
+            <form id="replicantForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="model">Model:</label>
+                <input type="text" id="model" required>
+                <label for="inceptionDate">Inception Date:</label>
+                <input type="date" id="inceptionDate" required>
+                <label for="status">Status:</label>
+                <select id="status" required>
+                    <option value="active">Active</option>
+                    <option value="retired">Retired</option>
+                </select>
+                <button type="submit">Add Replicant</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
