@@ -8,13 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Replicant Registry</h1>
+        <!-- Displays the app title and agent information -->
+        <h1>Replicant Registry Terminal</h1>
+        <p class="header-info">LAPD Cybernetics Department<br>Welcome Agent KD6-3.7</p>
         <nav>
-            <button id="viewReplicants">View Replicants</button>
-            <button id="addReplicant">Add Replicant</button>
+            <button id="viewReplicants">ACCESS LOGS</button>
+            <button id="addReplicant">ADD RECORD</button>
         </nav>
     </header>
     <main>
+        <!-- Main Content Area -->
+        <!-- Replicant List -->
         <section id="replicantList" style="display: none;">
             <h2>All Replicants</h2>
             <table>
@@ -28,12 +32,11 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="replicantTableBody">
-                    <!-- Rows will be dynamically added here -->
-                </tbody>
+                <tbody id="replicantTableBody"></tbody>
             </table>
         </section>
 
+        <!-- Add Replicant Form -->
         <section id="addReplicantForm" style="display: none;">
             <h2>Add New Replicant</h2>
             <form id="replicantForm">
@@ -51,6 +54,14 @@
                 <button type="submit">Add Replicant</button>
             </form>
         </section>
+
+        <!-- Profile Modal -->
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="profileContent"></div>
+            </div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>

@@ -19,17 +19,20 @@ public class ReplicantController {
         this.replicantService = replicantService;
     }
 
+    // GET endpoint to fetch all replicants
     @GetMapping
     public List<Replicant> getAllReplicants() {
         return replicantService.getAllReplicants();
     }
 
+    // GET endpoint to fetch a replicant by ID
     @GetMapping("/{id}")
     public ResponseEntity<Replicant> getReplicantById(@PathVariable Long id) {
         Optional<Replicant> replicant = replicantService.getReplicantById(id);
         return replicant.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // POST endpoint to add a new replicant
     @PostMapping
     public Replicant addReplicant(@RequestBody Replicant replicant) {
         return replicantService.addReplicant(replicant);
@@ -41,6 +44,7 @@ public class ReplicantController {
         return updated.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // DELETE endpoint to remove a replicant by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteReplicant(@PathVariable Long id) {
         boolean deleted = replicantService.deleteReplicant(id);
